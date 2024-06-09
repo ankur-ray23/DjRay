@@ -133,7 +133,5 @@ const nav = document.querySelector(".nav"),
         })
         .catch(error => console.error('Error!', error.message))
     })
-    document.addEventListener('touchstart', function(event) {
-        event.preventDefault();
-    }, { passive: false });
+
 
