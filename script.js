@@ -93,3 +93,44 @@ const nav = document.querySelector(".nav"),
                 allSection[i].classList.toggle("open")
             }
         }
+    
+    function changeActiveSectionOnScroll() {
+        const scrollY = window.scrollY;
+        allSection.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+    
+            if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
+                for (let i = 0; i < totalSection; i++) {
+                    allSection[i].classList.remove("active");
+                    allSection[i].classList.remove("back-section");
+                    navList[i].querySelector("a").classList.remove("active");
+                }
+                section.classList.add("active");
+                navList[index].querySelector("a").classList.add("active");
+                if (index > 0) {
+                    allSection[index - 1].classList.add("back-section");
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', changeActiveSectionOnScroll);
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw2gqNpI93A10L3rzfD4jWhCpYniFwpBRLThTUiMQokqMsk3miZNGy19yf5S2fXSC9hlg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Form Submitted Successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+

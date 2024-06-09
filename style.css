@@ -6,6 +6,11 @@
     --bg-black-50:#e8dfec;
     --text-black-900:#302e4d;
     --text-black-700:#504e70;
+    --btn-black-20: #ffffff;
+
+}
+html {
+    scroll-behavior: smooth;
 }
 body.dark{
 
@@ -14,6 +19,7 @@ body.dark{
     --bg-black-50:#2b292c;
     --text-black-900:#ffffff;
     --text-black-700:#dfdef0;
+    --btn-black-20: #ffffff;
 }
 body
 {
@@ -76,6 +82,14 @@ ul{
         transform: translateX(0%);
     }
     
+}
+@keyframes scrollIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
 /* .main_content
 {
@@ -149,7 +163,7 @@ ul{
     font-size: 16px;
     font-weight: 600;
     padding: 12px 35px;
-    color: var(--text-black-900);
+    color: var(--btn-black-20);
     border-radius: 40px;
     display: inline-block;
     white-space: nowrap;
@@ -315,7 +329,7 @@ h3.hello
     margin: 15px 0;
 }
 h3.hello span{
-    font-family: "Caveat", cursive;
+    font-family: "Clicker Script", cursive;
     font-size: 38px;
     font-weight: 700;
     color: var(--skin-color-1);
@@ -335,7 +349,7 @@ h3.my-profession
     color: var(--text-black-700);
 }
 .home-info .describe .school-name{
-    font-family: "Clicker Script", cursive;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 20px;
     color: var(--skin-color-1);
@@ -427,6 +441,20 @@ h3.my-profession
     word-break: break-all;
     white-space: pre-wrap;
 }
+.about .about-content .personal-info .info-item a{
+    display: inline-block;
+    font-size: 17px;
+    color: #007bff; /* Change text color */
+    text-decoration: underline; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+}
+.about .about-content .personal-info .info-item a .fab{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 24px;
+}
+
 .about .about-content .personal-info .buttons{
     flex: 0 0 100%;
     max-width: 100%;
@@ -542,7 +570,7 @@ h3.my-profession
 }
 .about .about-content .timeline .timeline-title{
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Times New Roman';
     margin-bottom: 15px;
     text-transform: capitalize;
@@ -551,7 +579,7 @@ h3.my-profession
 }
 .about .about-content .timeline .timeline-text{
     line-height: 25px;
-    font-size: 20px;
+    font-size: 16px;
     text-align: justify;
     color: var(--text-black-700);
     font-family: 'Times New Roman';
@@ -857,6 +885,12 @@ h3.my-profession
     .home .home-img
     {
         display: none;
+    }
+    .about .about-content .education,
+    .about .about-content .experience
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 @media (max-width:750px)
