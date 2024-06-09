@@ -445,7 +445,7 @@ h3.my-profession
     display: inline-block;
     font-size: 17px;
     color: #007bff; /* Change text color */
-    text-decoration: underline; /* Remove underline */
+    text-decoration: none; /* Remove underline */
     font-weight: bold; /* Make text bold */
 }
 .about .about-content .personal-info .info-item a .fab{
